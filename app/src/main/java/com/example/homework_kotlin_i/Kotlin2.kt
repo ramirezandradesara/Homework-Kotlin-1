@@ -19,7 +19,8 @@ class Kotlin2 {
     inline fun multiply(a: Int, b: Int) = a * b
 
     fun square(n: Int) = n * n // TODO: Convertir esta función a una expresión de una sola línea
-    inline fun square2(n: Int) = n * n
+
+    inline fun square2(n: Int, jojo: (String) -> Unit ) = n * n
 
     // 3. Introducción a lambdas y funciones de orden superior
     fun lambdaExample() {
@@ -27,6 +28,8 @@ class Kotlin2 {
         // TODO: Usar map para duplicar los valores de numbers y almacenarlo en una nueva lista
         // TODO: Usar filter para obtener solo los números pares
         val duplicados = numbers.map { num -> num * 2 }
+        val duplicados2 = numbers.map { it * 2 }
+
         val pares = numbers.filter { num -> num % 2 == 0 }
         println("Números duplicados: $duplicados")
         println("Números pares: $pares")
@@ -46,7 +49,8 @@ class Kotlin2 {
     // 5. Constructores y datos encapsulados
     class Car(
         val brand: String,
-        val model: String, val year: Int
+        val model: String,
+        val year: Int
     ) {
         init {
             // TODO: Imprimir "Auto creado: {brand} {model} del año {year}"
